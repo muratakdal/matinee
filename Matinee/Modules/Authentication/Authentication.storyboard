@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authentication View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AuthenticationViewController" id="Y6W-OH-hqX" customClass="AuthenticationViewController" customModule="Matinee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yir-Md-tNg">
+                                <rect key="frame" x="20" y="392" width="335" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QWi-56-dMt">
+                                <rect key="frame" x="20" y="439" width="335" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matineeLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-IK-CbF">
+                                <rect key="frame" x="107.66666666666669" y="182" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="T4q-HZ-tAD"/>
+                                    <constraint firstAttribute="height" constant="160" id="UNh-zV-nVx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwH-0s-6Rg">
+                                <rect key="frame" x="255" y="513" width="100" height="35"/>
+                                <color key="backgroundColor" name="matineeSecondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="f3N-69-wqC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logInButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nDF-13-GHw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGU-Y5-G03">
+                                <rect key="frame" x="20" y="513" width="100" height="35"/>
+                                <color key="backgroundColor" name="matineeSecondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KKp-Ya-E4X"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign up">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Mv-Qe-nVJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="matineePrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QWi-56-dMt" secondAttribute="trailing" constant="20" id="2Os-us-jyd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yir-Md-tNg" secondAttribute="trailing" constant="20" id="8Zf-HJ-HNz"/>
+                            <constraint firstItem="p0a-IK-CbF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="94k-rH-8IU"/>
+                            <constraint firstItem="Yir-Md-tNg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="IBW-p5-agH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Yir-Md-tNg" secondAttribute="bottom" constant="355" id="Nuk-Pf-nRh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fwH-0s-6Rg" secondAttribute="trailing" constant="20" id="TK5-7E-gJh"/>
+                            <constraint firstItem="QWi-56-dMt" firstAttribute="top" secondItem="Yir-Md-tNg" secondAttribute="bottom" constant="16" id="apW-5M-XNc"/>
+                            <constraint firstItem="Yir-Md-tNg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="dv7-cX-0Bn"/>
+                            <constraint firstItem="QWi-56-dMt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="fd9-wx-bO5"/>
+                            <constraint firstItem="cGU-Y5-G03" firstAttribute="top" secondItem="QWi-56-dMt" secondAttribute="bottom" constant="40" id="lP5-sa-Ny6"/>
+                            <constraint firstItem="Yir-Md-tNg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="342" id="ngh-Sv-YfY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QWi-56-dMt" secondAttribute="bottom" constant="305" id="qQJ-eW-bGA"/>
+                            <constraint firstItem="Yir-Md-tNg" firstAttribute="top" secondItem="p0a-IK-CbF" secondAttribute="bottom" constant="50" id="qt3-R6-YxB"/>
+                            <constraint firstItem="fwH-0s-6Rg" firstAttribute="top" secondItem="QWi-56-dMt" secondAttribute="bottom" constant="40" id="tU7-G3-918"/>
+                            <constraint firstItem="cGU-Y5-G03" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="xo3-RL-cse"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTF" destination="Yir-Md-tNg" id="B9A-hG-XgA"/>
+                        <outlet property="passwordTF" destination="QWi-56-dMt" id="4Fj-uB-5Bt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.40000000000001" y="-2.2167487684729066"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="matineeLogoWhite" width="500" height="500"/>
+        <namedColor name="matineePrimaryColor">
+            <color red="0.14509803921568629" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="matineeSecondaryColor">
+            <color red="0.80392156862745101" green="0.40000000000000002" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

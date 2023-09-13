@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="KeyValueTableViewCell" customModule="Matinee" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Key: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cR-HW-U83">
+                        <rect key="frame" x="4" y="4" width="47" height="26"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                        <color key="textColor" name="matineeSecondaryColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-J1-PxX">
+                        <rect key="frame" x="55" y="4" width="390" height="70"/>
+                        <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9cR-HW-U83" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="K07-AF-BON"/>
+                    <constraint firstItem="kiK-J1-PxX" firstAttribute="leading" secondItem="9cR-HW-U83" secondAttribute="trailing" constant="4" id="Rao-1m-fDD"/>
+                    <constraint firstItem="kiK-J1-PxX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Ujt-Po-nOq"/>
+                    <constraint firstItem="9cR-HW-U83" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="W07-y9-3MH"/>
+                    <constraint firstAttribute="bottom" secondItem="kiK-J1-PxX" secondAttribute="bottom" constant="19" id="aDJ-kR-RkM"/>
+                    <constraint firstAttribute="trailing" secondItem="kiK-J1-PxX" secondAttribute="trailing" constant="4" id="eSp-oo-Sub"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="matineePrimaryColor"/>
+            <point key="canvasLocation" x="237.40458015267174" y="36.971830985915496"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="matineePrimaryColor">
+            <color red="0.14509803921568629" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="matineeSecondaryColor">
+            <color red="0.80392156862745101" green="0.40000000000000002" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
