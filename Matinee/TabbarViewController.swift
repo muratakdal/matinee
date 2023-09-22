@@ -18,7 +18,7 @@ class TabbarViewController : UITabBarController {
         
         let home = HomeBuilder.make()
         let search = SearchBuilder.make()
-        let watchList = UIStoryboard(name: "WatchList", bundle: nil).instantiateViewController(withIdentifier: "WatchListViewController") as! WatchListViewController
+        let watchList = WatchListBuilder.make()
         let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
 
         let vc1 = setupViewController(with: home, tabBarTitle: "Home", tabBarImage: UIImage(systemName: "house")!, tabBarSelectedImage: UIImage(systemName: "house.fill"))

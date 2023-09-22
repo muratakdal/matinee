@@ -7,9 +7,11 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, MovieDetailPresenterDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var detailPresenter: MovieDetailPresenter?
     
     var movie: Movie?
     var isMovieSelected = false
@@ -37,6 +39,17 @@ class MovieDetailViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func didErrorOccured(_ error: Error) {
+        makeAlert(titleInput: "Caution", messageInput: error.localizedDescription)
+    }
+    
+    func makeAlert(titleInput: String, messageInput: String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension MovieDetailViewController : UITableViewDelegate, UITableViewDataSource {
@@ -62,17 +75,14 @@ extension MovieDetailViewController : UITableViewDelegate, UITableViewDataSource
                 cell.filmNameLabel.text = movie?.title
             }
             cell.addWatchlistButton.addTarget(self, action: #selector(addWatchlistButtonClicked(_:)), for: .touchUpInside)
+            
             if isMovieSelected {
-                cell.addWatchlistButton.backgroundColor = .white
-                cell.addWatchlistButton.tintColor = UIColor(named: "matineeSecondaryColor")
-                cell.addWatchlistButton.layer.borderWidth = 3
-                cell.addWatchlistButton.layer.borderColor = UIColor(named: "matineeSecondaryColor")?.cgColor
-                cell.addWatchlistButton.setTitle("Added", for: .normal)
+                detailPresenter?.addWatchlist(movieId: (movie?.id)!)
+                cell.addWatchlistSelected()
             } else {
-                cell.addWatchlistButton.backgroundColor = UIColor(named: "matineeSecondaryColor")
-                cell.addWatchlistButton.tintColor = .white
-                cell.addWatchlistButton.setTitle("Add To Watchlist", for: .normal)
+                cell.addWatchlistNotSelected()
             }
+            
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieOverviewTableViewCell", for: indexPath) as? MovieOverviewTableViewCell else {

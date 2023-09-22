@@ -34,7 +34,7 @@ class APICaller {
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 //self.delegate?.getMovies(movies: results.results)
                 completion(results.results)
             } catch {
@@ -55,7 +55,7 @@ class APICaller {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 completion(results.results)
             } catch {
                 completion([])
@@ -63,6 +63,10 @@ class APICaller {
             }
         }
         task.resume()
+    }
+    
+    func fetchWatchlistMovies() {
+        
     }
     
 //   MARK: page: Int (getTrendingMoviesWithDelegate metodunun alacağı parametre)
@@ -74,7 +78,7 @@ class APICaller {
             }
 
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 self.delegate?.getMovies(movies: results.results)
             } catch {
                 self.delegate?.getMovies(movies: [])
@@ -92,7 +96,7 @@ class APICaller {
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 self.delegate?.getMovies(movies: results.results)
             } catch {
                 self.delegate?.getMovies(movies: [])
@@ -110,7 +114,7 @@ class APICaller {
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 self.delegate?.getMovies(movies: results.results)
             } catch {
                 self.delegate?.getMovies(movies: [])
@@ -128,7 +132,7 @@ class APICaller {
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 self.delegate?.getMovies(movies: results.results)
             } catch {
                 self.delegate?.getMovies(movies: [])
@@ -146,7 +150,7 @@ class APICaller {
             }
             
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
                 self.delegate?.getMovies(movies: results.results)
             } catch {
                 self.delegate?.getMovies(movies: [])

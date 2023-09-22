@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import UIKit
+
+class AuthRouter {
+    var viewController: UIViewController?
+    
+    func pushToTabbar() {
+        let tabbarViewController = TabbarViewController()
+        viewController?.navigationController?.pushViewController(tabbarViewController, animated: true)
+    }
+}

@@ -7,6 +7,26 @@
 
 import Foundation
 
-class WatchListPresenter {
+protocol WatchListPresenterDelegate {
+    func didErrorOccured(_ error: Error)
+}
+
+class WatchListPresenter : WatchListInteractorDelegate {
+    
+    var delegate : WatchListPresenterDelegate?
+    var watchlistInteractor : WatchListInteractor?
+    
+    
+    func didErrorOccured(_ error: Error) {
+        delegate?.didErrorOccured(error)
+    }
+    
+    func getWatchlistMovie(userId: String) {
+//        TODO: interactor.getWatchlist 
+    }
+    
+    func didReceiveData() {
+        
+    }
     
 }

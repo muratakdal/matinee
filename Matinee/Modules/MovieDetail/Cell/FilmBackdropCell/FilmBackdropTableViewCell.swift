@@ -15,13 +15,24 @@ class FilmBackdropTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func addWatchlistSelected() {
+        addWatchlistButton.backgroundColor = .white
+        addWatchlistButton.tintColor = UIColor(named: "matineeSecondaryColor")
+        addWatchlistButton.layer.borderWidth = 3
+        addWatchlistButton.layer.borderColor = UIColor(named: "matineeSecondaryColor")?.cgColor
+        addWatchlistButton.setTitle("Added", for: .normal)
+    }
+    
+    func addWatchlistNotSelected() {
+        addWatchlistButton.backgroundColor = UIColor(named: "matineeSecondaryColor")
+        addWatchlistButton.tintColor = .white
+        addWatchlistButton.setTitle("Add To Watchlist", for: .normal)
     }
     
 }

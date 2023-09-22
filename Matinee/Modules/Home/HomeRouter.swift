@@ -13,8 +13,8 @@ class HomeRouter {
     var viewController: UIViewController?
     
     func movieDetail(movie: Movie) {
-        let detailsPage = UIStoryboard.init(name: "MovieDetail", bundle: Bundle.main).instantiateViewController(withIdentifier: "MovieDetailViewController") as? MovieDetailViewController
-        detailsPage?.movie = movie
-        viewController?.navigationController?.pushViewController(detailsPage!, animated: true)
+        let detailsPage = MovieDetailBuilder.make()
+        detailsPage.movie = movie
+        viewController?.navigationController?.pushViewController(detailsPage, animated: true)
     }
 }

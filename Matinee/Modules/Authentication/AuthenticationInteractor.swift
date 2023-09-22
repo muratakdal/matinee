@@ -9,7 +9,9 @@ import Foundation
 import FirebaseAuth
 
 protocol AuthInteractorDelegate {
-    func delegateMethod()
+    func didErrorOccured(_ error: Error)
+    func didAuthSuccess()
+//    func didRegistrationSucceed(emailText: String, passwordText: String)
 }
 
 class AuthInteractor {
@@ -17,14 +19,22 @@ class AuthInteractor {
     
     
     func register(emailText: String, passwordText: String) {
-        
+        Auth.auth().createUser(withEmail: emailText, password: passwordText) { result, error in
+            if let error = error {
+                self.delegate?.didErrorOccured(error)
+            } else {
+                self.delegate?.didAuthSuccess()
+            }
+        }
     }
     
     func login(emailText: String, passwordText: String) {
-        if emailText != "" && passwordText != "" {
-//            TODO: Firebase Auth.auth().signIn
-        } else {
-//            TODO: Error Alert
+        Auth.auth().signIn(withEmail: emailText, password: passwordText) { result, error in
+            if let error = error {
+                self.delegate?.didErrorOccured(error)
+            } else {
+                self.delegate?.didAuthSuccess()
+            }
         }
     }
     

@@ -7,10 +7,12 @@
 
 import UIKit
 
-class WatchListViewController: UIViewController {
+class WatchListViewController: UIViewController, WatchListPresenterDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
+    var watchlistPresenter : WatchListPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,18 @@ class WatchListViewController: UIViewController {
         searchBar.searchTextField.leftView?.tintColor = UIColor(named: "matineeSecondaryColor")
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search in the watchlist.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(0.7)])
     }
+    
+    func didErrorOccured(_ error: Error) {
+        makeAlert(titleInput: "Error", messageInput: error.localizedDescription)
+    }
+    
+    func makeAlert(titleInput: String, messageInput: String){
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
