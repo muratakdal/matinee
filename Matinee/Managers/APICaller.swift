@@ -59,7 +59,7 @@ class APICaller {
                 completion(results.results)
             } catch {
                 completion([])
-                print(error)
+                print(error) 
             }
         }
         task.resume()
