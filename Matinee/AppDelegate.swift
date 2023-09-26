@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupNavigationController() {
         if #available(iOS 15.0, *) {
             let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.backgroundColor = UIColor(named: "matineePrimaryColor")
+            tabBarAppearance.backgroundColor = .black
             UITabBar.appearance().standardAppearance = tabBarAppearance
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             UITabBar.appearance().unselectedItemTintColor = UIColor.white

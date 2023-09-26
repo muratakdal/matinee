@@ -65,8 +65,21 @@ class APICaller {
         task.resume()
     }
     
-    func fetchWatchlistMovies() {
-        
+    func fetchMovieById(movieId: Int, completion: @escaping (Movie?) -> ()) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/movie/\(movieId)?api_key=\(Constants.API_KEY)") else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let result = try JSONDecoder().decode(Movie.self, from: data)
+                completion(result)
+            } catch {
+                completion(nil)
+                print(error)
+            }
+        }
+        task.resume()
     }
     
 //   MARK: page: Int (getTrendingMoviesWithDelegate metodunun alacağı parametre)

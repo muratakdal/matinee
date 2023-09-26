@@ -11,32 +11,45 @@ import FirebaseAuth
 
 protocol WatchListInteractorDelegate {
     func didErrorOccured(_ error: Error)
-    func didReceiveData()
 }
 
 class WatchListInteractor {
     
     var delegate : WatchListInteractorDelegate?
     
-    func getWatchlistFromFirebase(userId: String, completion: @escaping (String?) -> Void) {
+    func getWatchlistFromFirebase(userId: String, completion: @escaping ([Int]) -> Void) {
         let firestore = Firestore.firestore()
         
         let userWatchlistReference = firestore.collection("Watchlist").document(userId)
-        let movieWatchlistReference = userWatchlistReference.collection("Movies").document("MovieId")
-        
-        movieWatchlistReference.getDocument { document, error in
+        let movieWatchlistReference = userWatchlistReference.collection("Movies")
+        movieWatchlistReference.addSnapshotListener { snapshot, error in
             if let error = error {
                 self.delegate?.didErrorOccured(error)
-                completion(nil)
+                completion([])
             } else {
-                if let documentData = document?.data(), let movieId = documentData["movieId"] as? String {
-                    
-                    completion(movieId)
-                    print(movieId)
-                } else {
-                    completion(nil)
+                guard let documents = snapshot?.documents else {
+                    print("No movie found")
+                    completion([])
+                    return
                 }
+                var watchList: [Int] = []
+                
+                for document in documents {
+                    
+                    if let movieId = document.get("MovieId") as? Int {
+                        watchList.append(movieId)
+                    }
+                }
+                completion(watchList)
             }
+        }
+    }
+    
+    func fetchMovieById(movieId: Int, completion: @escaping (Movie) -> Void) {
+        APICaller.shared.fetchMovieById(movieId: movieId) { movie in
+            if let movie = movie {
+                completion(movie)
+            } 
         }
     }
 }

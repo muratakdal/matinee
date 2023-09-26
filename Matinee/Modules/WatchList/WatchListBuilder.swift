@@ -18,7 +18,11 @@ class WatchListBuilder {
         let watchlistInteractor = WatchListInteractor()
         watchlistInteractor.delegate = watchlistPresenter
         
+        let watchlistRouter = WatchListRouter()
+        watchlistRouter.viewController = watchlist
+        
         watchlistPresenter.watchlistInteractor = watchlistInteractor
+        watchlistPresenter.watchlistRouter = watchlistRouter
         
         watchlist.watchlistPresenter = watchlistPresenter
         

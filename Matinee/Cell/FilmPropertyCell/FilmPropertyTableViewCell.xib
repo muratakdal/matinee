@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,56 +14,56 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FilmPropertyTableViewCell" customModule="Matinee" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="389" height="131"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="389" height="131"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matineeLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-RY-NmT">
-                        <rect key="frame" x="4" y="4" width="85" height="115"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matineeLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="ETW-RY-NmT">
+                        <rect key="frame" x="4" y="4" width="85" height="120"/>
                         <color key="backgroundColor" name="matineeSecondaryColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="85" id="0nA-Yy-hZi"/>
-                            <constraint firstAttribute="height" constant="115" id="kw6-iu-A45"/>
+                            <constraint firstAttribute="height" constant="120" id="kw6-iu-A45"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-LB-R2B">
-                        <rect key="frame" x="102" y="7.9999999999999982" width="271" height="31.333333333333329"/>
-                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-LB-R2B">
+                        <rect key="frame" x="102" y="8.0000000000000018" width="271" height="25.666666666666671"/>
+                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
                         <color key="textColor" name="matineeSecondaryColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feb 2, 2001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-jb-lMG">
-                        <rect key="frame" x="102" y="47.333333333333336" width="271" height="20.000000000000007"/>
-                        <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="17"/>
+                        <rect key="frame" x="102" y="41.666666666666664" width="271" height="17.333333333333336"/>
+                        <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="3.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-wb-ofu">
-                        <rect key="frame" x="129.66666666666663" y="91.333333333333329" width="223.33333333333337" height="26.666666666666671"/>
-                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="24"/>
+                        <rect key="frame" x="129.66666666666663" y="79" width="223.33333333333337" height="25.333333333333329"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="szn-xz-5qe">
-                        <rect key="frame" x="102" y="92.333333333333329" width="19.666666666666671" height="19"/>
+                        <rect key="frame" x="102" y="80" width="19.666666666666671" height="19"/>
                         <color key="tintColor" name="matineeSecondaryColor"/>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Jz8-LB-R2B" firstAttribute="leading" secondItem="ETW-RY-NmT" secondAttribute="trailing" constant="13" id="BqX-Sd-fAM"/>
-                    <constraint firstItem="szn-xz-5qe" firstAttribute="top" secondItem="jE6-jb-lMG" secondAttribute="bottom" constant="24" id="Ihn-6J-1eU"/>
+                    <constraint firstItem="szn-xz-5qe" firstAttribute="top" secondItem="jE6-jb-lMG" secondAttribute="bottom" constant="20" id="Ihn-6J-1eU"/>
                     <constraint firstItem="Jz8-LB-R2B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="JwD-GH-1ag"/>
                     <constraint firstItem="ETW-RY-NmT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="Jzb-O2-B6r"/>
                     <constraint firstItem="jE6-jb-lMG" firstAttribute="top" secondItem="Jz8-LB-R2B" secondAttribute="bottom" constant="8" id="KfP-Vg-j20"/>
                     <constraint firstAttribute="trailingMargin" secondItem="MZv-wb-ofu" secondAttribute="trailing" constant="16" id="Mpy-Xm-1cr"/>
-                    <constraint firstItem="MZv-wb-ofu" firstAttribute="top" secondItem="jE6-jb-lMG" secondAttribute="bottom" constant="24" id="Vr4-TG-9ey"/>
+                    <constraint firstItem="Jz8-LB-R2B" firstAttribute="leading" secondItem="ETW-RY-NmT" secondAttribute="trailing" constant="13" id="TpD-fg-SmC"/>
+                    <constraint firstItem="MZv-wb-ofu" firstAttribute="top" secondItem="jE6-jb-lMG" secondAttribute="bottom" constant="20" id="Vr4-TG-9ey"/>
                     <constraint firstItem="szn-xz-5qe" firstAttribute="leading" secondItem="ETW-RY-NmT" secondAttribute="trailing" constant="13" id="btC-cg-m4f"/>
                     <constraint firstItem="MZv-wb-ofu" firstAttribute="leading" secondItem="szn-xz-5qe" secondAttribute="trailing" constant="8" id="dgK-jT-gib"/>
                     <constraint firstAttribute="trailing" secondItem="jE6-jb-lMG" secondAttribute="trailing" constant="16" id="hhf-n5-BmG"/>
-                    <constraint firstAttribute="bottom" secondItem="ETW-RY-NmT" secondAttribute="bottom" constant="12" id="lZZ-Ab-peE"/>
+                    <constraint firstAttribute="bottom" secondItem="ETW-RY-NmT" secondAttribute="bottom" constant="4" id="lZZ-Ab-peE"/>
                     <constraint firstItem="jE6-jb-lMG" firstAttribute="leading" secondItem="ETW-RY-NmT" secondAttribute="trailing" constant="13" id="nTA-oM-Lqb"/>
                     <constraint firstAttribute="trailing" secondItem="Jz8-LB-R2B" secondAttribute="trailing" constant="16" id="wzH-cA-7hU"/>
                     <constraint firstItem="ETW-RY-NmT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="xX1-nW-pit"/>
@@ -84,10 +84,10 @@
         <image name="matineeLogoWhite" width="500" height="500"/>
         <image name="star.circle" catalog="system" width="128" height="123"/>
         <namedColor name="matineePrimaryColor">
-            <color red="0.14509803921568629" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.015686274509803921" green="0.050980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="matineeSecondaryColor">
-            <color red="0.80392156862745101" green="0.40000000000000002" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9137254901960784" green="0.39215686274509803" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

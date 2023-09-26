@@ -45,17 +45,29 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pFe-Uj-k22">
+                                <rect key="frame" x="8" y="94" width="398" height="677"/>
+                                <color key="backgroundColor" name="matineePrimaryColor"/>
+                                <color key="separatorColor" name="matineeSecondaryColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="matineePrimaryColor"/>
                         <constraints>
+                            <constraint firstItem="pFe-Uj-k22" firstAttribute="top" secondItem="Cnb-Ee-vmx" secondAttribute="bottom" constant="4" id="BUb-1a-pZO"/>
                             <constraint firstItem="Cnb-Ee-vmx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="K71-Dt-mxU"/>
                             <constraint firstItem="sbz-XN-qQy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="K9t-3R-K8d"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pFe-Uj-k22" secondAttribute="trailing" constant="8" id="VlX-Qh-fHg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sbz-XN-qQy" secondAttribute="bottom" constant="50" id="YUj-93-rHa"/>
+                            <constraint firstItem="sbz-XN-qQy" firstAttribute="top" secondItem="pFe-Uj-k22" secondAttribute="bottom" constant="4" id="fOz-PH-amO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Cnb-Ee-vmx" secondAttribute="trailing" id="nij-bZ-pln"/>
+                            <constraint firstItem="pFe-Uj-k22" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="qny-Cb-sYJ"/>
                             <constraint firstItem="Cnb-Ee-vmx" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="48" id="zak-Es-04V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pFe-Uj-k22" id="f5J-lm-E5z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,10 +76,10 @@
     </scenes>
     <resources>
         <namedColor name="matineePrimaryColor">
-            <color red="0.14509803921568629" green="0.16862745098039217" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.015686274509803921" green="0.050980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="matineeSecondaryColor">
-            <color red="0.80392156862745101" green="0.40000000000000002" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9137254901960784" green="0.39215686274509803" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

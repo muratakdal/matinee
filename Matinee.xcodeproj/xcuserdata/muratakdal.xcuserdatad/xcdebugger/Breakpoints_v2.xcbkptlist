@@ -7,17 +7,176 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DE8485F9-C328-402D-A1CB-8CD9B161D16E"
+            uuid = "97D2D014-E378-493A-A21E-98F55938AF30"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Matinee/Modules/Authentication/AuthenticationRouter.swift"
+            filePath = "Matinee/Modules/WatchList/WatchListPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "pushToTabbar()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getWatchlistMovie()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D0E6BA9-F5D6-4320-8739-7AE65DB334CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Matinee/Modules/WatchList/WatchListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23E3C43F-ECA6-468A-ABB4-26F4BDF54205"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Matinee/Modules/WatchList/WatchListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getWatchlistMovie()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "23E3C43F-ECA6-468A-ABB4-26F4BDF54205 - f1d6e5e22530630c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Int&gt;) -&gt; () in Matinee.WatchListPresenter.getWatchlistMovie() -&gt; ()"
+                  moduleName = "Matinee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muratakdal/Desktop/Swifto/Matinee/Matinee/Modules/WatchList/WatchListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "231">
+               </Location>
+               <Location
+                  uuid = "23E3C43F-ECA6-468A-ABB4-26F4BDF54205 - af30214157c22abf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Matinee.Movie) -&gt; () in closure #1 (Swift.Array&lt;Swift.Int&gt;) -&gt; () in Matinee.WatchListPresenter.getWatchlistMovie() -&gt; ()"
+                  moduleName = "Matinee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muratakdal/Desktop/Swifto/Matinee/Matinee/Modules/WatchList/WatchListPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "2866">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A78232A5-7117-462A-B81F-6592A24699E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Matinee/Modules/WatchList/WatchListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getWatchlistMovie()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFD87B33-8DF4-4EED-BDE7-F9AF875A7AAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Matinee/Modules/WatchList/WatchListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getWatchlistFromFirebase(userId:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2981057A-93B4-4697-B8F1-B19021AD3246"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Matinee/Modules/WatchList/WatchListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getWatchlistFromFirebase(userId:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2981057A-93B4-4697-B8F1-B19021AD3246 - 8196bbac1fcc299b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Matinee.WatchListInteractor.getWatchlistFromFirebase(userId: Swift.String, completion: (Swift.Array&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Matinee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muratakdal/Desktop/Swifto/Matinee/Matinee/Modules/WatchList/WatchListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "2981057A-93B4-4697-B8F1-B19021AD3246 - 88d4655bcc8680e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Matinee.WatchListInteractor.getWatchlistFromFirebase(userId: Swift.String, completion: (Swift.Array&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Matinee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muratakdal/Desktop/Swifto/Matinee/Matinee/Modules/WatchList/WatchListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "269">
+               </Location>
+               <Location
+                  uuid = "2981057A-93B4-4697-B8F1-B19021AD3246 - 88d4655bcc8680c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Matinee.WatchListInteractor.getWatchlistFromFirebase(userId: Swift.String, completion: (Swift.Array&lt;Swift.Int&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Matinee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/muratakdal/Desktop/Swifto/Matinee/Matinee/Modules/WatchList/WatchListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "269">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

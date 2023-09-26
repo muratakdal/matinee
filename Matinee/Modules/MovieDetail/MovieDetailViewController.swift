@@ -36,6 +36,7 @@ class MovieDetailViewController: UIViewController, MovieDetailPresenterDelegate 
     
     @objc func addWatchlistButtonClicked(_ sender: UIButton) {
         isMovieSelected = !isMovieSelected
+        detailPresenter?.addWatchlist(movieId: (movie?.id)!)
         tableView.reloadData()
     }
     
@@ -77,7 +78,6 @@ extension MovieDetailViewController : UITableViewDelegate, UITableViewDataSource
             cell.addWatchlistButton.addTarget(self, action: #selector(addWatchlistButtonClicked(_:)), for: .touchUpInside)
             
             if isMovieSelected {
-                detailPresenter?.addWatchlist(movieId: (movie?.id)!)
                 cell.addWatchlistSelected()
             } else {
                 cell.addWatchlistNotSelected()

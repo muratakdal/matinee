@@ -23,7 +23,7 @@ class MovieDetailInteractor {
             
             
             let userWatchlistReference = firestore.collection("Watchlist").document("\(userId)")
-            let movieWatchlistReference = userWatchlistReference.collection("Movies").document()
+            let movieWatchlistReference = userWatchlistReference.collection("Movies").document("\(movieId)")
             
             movieWatchlistReference.setData(["MovieId" : movieId]) { error in
                 if let error = error {
