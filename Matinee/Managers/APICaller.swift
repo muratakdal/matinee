@@ -59,7 +59,26 @@ class APICaller {
                 completion(results.results)
             } catch {
                 completion([])
-                print(error) 
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
+    func searchTvWithCompletion(with query: String, completion: @escaping ([Movie]) -> ()) {
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
+        guard let url = URL(string: "\(Constants.baseURL)/3/search/tv?api_key=\(Constants.API_KEY)&query=\(query)") else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let results = try JSONDecoder().decode(MovieResponse.self, from: data)
+                completion(results.results)
+            } catch {
+                completion([])
+                print(error)
             }
         }
         task.resume()
@@ -67,6 +86,23 @@ class APICaller {
     
     func fetchMovieById(movieId: Int, completion: @escaping (Movie?) -> ()) {
         guard let url = URL(string: "\(Constants.baseURL)/3/movie/\(movieId)?api_key=\(Constants.API_KEY)") else {return}
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let result = try JSONDecoder().decode(Movie.self, from: data)
+                completion(result)
+            } catch {
+                completion(nil)
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
+    func fetchTvById(tvId: Int, completion: @escaping (Movie?) -> ()) {
+        guard let url = URL(string: "\(Constants.baseURL)/3/tv/\(tvId)?api_key=\(Constants.API_KEY)") else {return}
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 return

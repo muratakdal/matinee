@@ -29,5 +29,8 @@ class SearchInteractor : APICallerDelegate {
         APICaller.shared.searchMovieWithCompletion(with: text) { movies in
             self.delegate?.didReceiveData(movies: movies)
         }
+        APICaller.shared.searchTvWithCompletion(with: text) { movies in
+            self.delegate?.didReceiveData(movies: movies)
+        }
     }
 }

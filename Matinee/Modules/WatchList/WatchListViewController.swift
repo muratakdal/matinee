@@ -14,13 +14,30 @@ class WatchListViewController: UIViewController, WatchListPresenterDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var watchlistPresenter : WatchListPresenter?
-    
+        
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         registerTableViewCells()
         searchBarTextSetupUI()
+        watchlistPresenter?.getWatchlistMovie()
+        
+//        TODO: Watchlist refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+
+        activityIndicator.color = UIColor(named: "matineeSecondaryColor")?.withAlphaComponent(0.5)
+        tableView.backgroundView = activityIndicator
+
+    }
+    
+    @objc private func refreshData() {
+        activityIndicator.startAnimating()
+
         watchlistPresenter?.getWatchlistMovie()
     }
     
@@ -36,6 +53,10 @@ class WatchListViewController: UIViewController, WatchListPresenterDelegate {
     
     func didReceiveData() {
         DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            if self.activityIndicator.isAnimating {
+                self.activityIndicator.stopAnimating()
+            }
             self.tableView.reloadData()
         }
     }
@@ -54,6 +75,7 @@ class WatchListViewController: UIViewController, WatchListPresenterDelegate {
 }
 
 extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilmPropertyTableViewCell") as? FilmPropertyTableViewCell else {
             fatalError()
@@ -74,7 +96,7 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
             let outputFormatter = DateFormatter()
             outputFormatter.dateFormat = "MMM d, yyy"
             outputFormatter.locale = Locale(identifier: "en_EN")
-            let date = inputFormatter.date(from: movie.releaseDate ?? "1970-01-01")
+            let date = inputFormatter.date(from: movie.releaseDate ?? movie.firstAirDate ?? "1970-01-01")
             let dateString = outputFormatter.string(from: date!)
             cell.releaseDateLabel.text = dateString
         }
@@ -93,8 +115,18 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
         if let movie = watchlistPresenter?.watchList[indexPath.row] {
             watchlistPresenter?.goToMovieDetail(movie: movie)
         }
+        
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let movieId = watchlistPresenter?.watchList[indexPath.row].id {
+                watchlistPresenter?.deleteMovieFromFirebase(movieId: movieId)
+                watchlistPresenter?.watchList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
 }
 
 extension WatchListViewController : UISearchBarDelegate {

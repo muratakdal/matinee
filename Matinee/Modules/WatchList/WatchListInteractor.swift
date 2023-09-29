@@ -22,7 +22,7 @@ class WatchListInteractor {
         
         let userWatchlistReference = firestore.collection("Watchlist").document(userId)
         let movieWatchlistReference = userWatchlistReference.collection("Movies")
-        movieWatchlistReference.addSnapshotListener { snapshot, error in
+        movieWatchlistReference.getDocuments { snapshot, error in
             if let error = error {
                 self.delegate?.didErrorOccured(error)
                 completion([])
@@ -47,9 +47,26 @@ class WatchListInteractor {
     
     func fetchMovieById(movieId: Int, completion: @escaping (Movie) -> Void) {
         APICaller.shared.fetchMovieById(movieId: movieId) { movie in
-            if let movie = movie {
+            if let movie = movie, movie.id != nil {
                 completion(movie)
-            } 
+                return
+            }
+            APICaller.shared.fetchTvById(tvId: movieId) { movie in
+                if let movie = movie, movie.id != nil {
+                    completion(movie)
+                }
+            }
+        }
+    }
+    
+    func deleteMovieFromFirebase(movieId: Int) {
+        if let userId = Auth.auth().currentUser?.uid {
+            let firestore = Firestore.firestore()
+
+            let userWatchlistReference = firestore.collection("Watchlist").document("\(userId)")
+            let movieWatchlistReference = userWatchlistReference.collection("Movies").document("\(movieId)")
+            
+            movieWatchlistReference.delete()
         }
     }
 }

@@ -26,7 +26,7 @@ class FilmBackdropTableViewCell: UITableViewCell {
         addWatchlistButton.tintColor = UIColor(named: "matineeSecondaryColor")
         addWatchlistButton.layer.borderWidth = 3
         addWatchlistButton.layer.borderColor = UIColor(named: "matineeSecondaryColor")?.cgColor
-        addWatchlistButton.setTitle("Added", for: .normal)
+        addWatchlistButton.setTitle("Remove", for: .normal)
     }
     
     func addWatchlistNotSelected() {
