@@ -26,7 +26,7 @@ class WatchListPresenter : WatchListInteractorDelegate {
     }
     
     func getWatchlistMovie() {
-        self.watchList = []
+        watchList = []
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
         watchlistInteractor?.getWatchlistFromFirebase(userId: currentUserID, completion: { watchList in
             for movieId in watchList {
@@ -35,10 +35,7 @@ class WatchListPresenter : WatchListInteractorDelegate {
                         m.id ?? 0 == movie.id ?? 0
                     }) == nil {
                         self.watchList.append(movie)
-                        
-                        if watchList.count == self.watchList.count {
-                            self.delegate?.didReceiveData()
-                        }
+                        self.delegate?.didReceiveData()
                     }
                 })
             }
@@ -47,10 +44,6 @@ class WatchListPresenter : WatchListInteractorDelegate {
     
     func goToMovieDetail(movie: Movie) {
         watchlistRouter?.movieDetail(movie: movie)
-    }
-    
-    func deleteMovieFromFirebase(movieId: Int){
-        watchlistInteractor?.deleteMovieFromFirebase(movieId: movieId)
     }
     
 }

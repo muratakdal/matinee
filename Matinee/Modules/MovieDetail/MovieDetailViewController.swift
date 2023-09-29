@@ -31,14 +31,13 @@ class MovieDetailViewController: UIViewController, MovieDetailPresenterDelegate 
     
     private func navBarSetUI() {
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.backItem?.title = "Home"
     }
     
     @objc func addWatchlistButtonClicked(_ sender: UIButton) {
         isMovieSelected = !isMovieSelected
-        if let movieId = movie?.id {
-            detailPresenter?.addWatchlistButtonClicked(movieId: movieId)
-            tableView.reloadData()
-        }
+        detailPresenter?.addWatchlist(movieId: (movie?.id)!)
+        tableView.reloadData()
     }
     
     func didErrorOccured(_ error: Error) {
@@ -98,16 +97,12 @@ extension MovieDetailViewController : UITableViewDelegate, UITableViewDataSource
             
             if movie?.releaseDate == nil {
                 cell.originalNameLabel.text = movie?.originalName
-                let inputFormatter = DateFormatter()
-                inputFormatter.dateFormat = "YYYY-MM-dd"
-                let outputFormatter = DateFormatter()
-                outputFormatter.dateFormat = "MMM d, yyy"
-                outputFormatter.locale = Locale(identifier: "en_EN")
-                let date = inputFormatter.date(from: movie?.firstAirDate ?? "1970-01-01")
-                let dateString = outputFormatter.string(from: date!)
-                cell.releaseDateLabel.text = dateString
+                cell.releaseDateLabel.isHidden = true
+                cell.releaseDateKeyLabel.isHidden = true
             } else {
                 cell.originalNameLabel.text = movie?.originalTitle
+                cell.releaseDateKeyLabel.isHidden = false
+                cell.releaseDateLabel.isHidden = false
                 let inputFormatter = DateFormatter()
                 inputFormatter.dateFormat = "YYYY-MM-dd"
                 let outputFormatter = DateFormatter()

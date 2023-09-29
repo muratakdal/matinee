@@ -16,10 +16,9 @@ class MovieDetailPresenter : MovieDetailInteractorDelegate {
     var delegate : MovieDetailPresenterDelegate?
     var detailInteractor : MovieDetailInteractor?
     
-    var movie: Movie?
     
-    func addWatchlistButtonClicked(movieId: Int) {
-        detailInteractor?.addWatchlistButtonClicked(movieId: movieId)
+    func addWatchlist(movieId: Int) {
+        detailInteractor?.addWatchlistToFirebase(movieId: movieId)
     }
     
     func didErrorOccured(_ error: Error) {
